@@ -10,6 +10,24 @@ OMNIAUTH_GITHUB_KEY="YOUR_KEY"
 OMNIAUTH_GITHUB_SECRET="YOUR_SECRET_KEY"
 ```
 
+### imageの作成
+
+```
+docker-compose build
+```
+
+### 初回起動
+
+```
+docker-compose up -d
+```
+
+### migration
+
+```
+docker-compose run app rake db:migrate
+```
+
 ## 起動
 
 ```
