@@ -69,3 +69,5 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-github'
 
+# envファイルの読み込み
+gem 'dotenv-rails'

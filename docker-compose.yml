@@ -5,10 +5,13 @@ services:
       context: ./myapp
       dockerfile: Dockerfile
     command: |
-      bundle exec rails s -p 3000 -b 0.0.0.0
+      sh -c "
+        bundle install && \
+        rm /app/myapp/tmp/pids/server.pid; bundle exec rails s -p 3000 -b 0.0.0.0
+      "
     volumes:
       - ./myapp:/myapp
-      - /app/tlb_commerce/vendor/bundle
+      - /app/myapp/vendor/bundle
     ports:
       - "3000:3000"
     privileged: true
