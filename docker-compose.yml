@@ -12,10 +12,12 @@ services:
     volumes:
       - ./myapp:/myapp
       - /app/myapp/vendor/bundle
+      - /app/myapp/tmp
     ports:
       - "3000:3000"
     privileged: true
     tty: true
+    stdin_open: true
     links:
       - db
     depends_on:
